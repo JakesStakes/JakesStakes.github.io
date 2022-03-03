@@ -9,9 +9,15 @@
     <style>
       body {
         background-image: url("images/BAGUETTE.PNG");
-        color: rgb(0,191,255);
+        color: white;
         text-align: center;
         font-weight: bold;
+      }
+      span {
+        background-color: rgb(221,114,14);
+      }
+      table {
+        text-align: center;
       }
 
       
@@ -23,35 +29,35 @@
 
   
   <body>
-    <h1><a href="/" id="Back-button">&larr;</a></h1> <!--Bouton retour-->
+    <h1><span><a href="/" id="Back-button">&larr;</a></span></h1> <!--Bouton retour-->
 
     
-    <h1>Menu du souper</h1> <!--Titre du corps-->
+    <h1><span>Menu du souper</span></h1> <!--Titre du corps-->
 
     
-    <table> <!--Liste du souper-->
+    <table align="center"> <!--Liste du souper-->
       <thead>
         <tr>
-          <th>Repas</th> <!--Diviseur d'éléments de la liste du souper-->
-          <th>Ingrédients</th>
-          <th>Prix</th>
+          <th><span>Repas</span></th> <!--Diviseur d'éléments de la liste du souper-->
+          <th><span>Ingrédients</span></th>
+          <th><span>Prix</span></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Haricots</td> <!--Un des repas-->
-          <td>Contenu d'haricot typique</td> <!--Un des ingrédients-->
-          <td>$5</td> <!--Un des prix-->
+          <td><span>Haricots</span></td> <!--Un des repas-->
+          <td><span>Contenu d'haricot typique</span></td> <!--Un des ingrédients-->
+          <td><span>$5</span></td> <!--Un des prix-->
         </tr>
         <tr>
-          <td>Baguette</td>
-          <td>Pain</td>
-          <td>$1 000</td>
+          <td><span>Baguette</span></td>
+          <td><span>Pain</span></td>
+          <td><span>$1 000</span></td>
         </tr>
         <tr>
-          <td>Croissant</td>
-          <td>Pain différent</td>
-          <td>$200 000</td>
+          <td><span>Croissant</span></td>
+          <td><span>Pain différent</span></td>
+          <td><span>$200 000</span></td>
         </tr>
       </tbody>
     </table>
