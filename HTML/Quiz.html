@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+
+  <style>
+    #Back-button {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><a href="/" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1>Quiz de programmation javascript</h1>
+
+  
+  <label for="Q1">Comment fini-tu une fonction?</label>
+  <br>
+  <input type="radio" name="R1" id="Q1" value="mal">>
+  <input type="radio" name="R1" id="Q1" value="mal">{}
+  <input type="radio" name="R1" id="Q1" value="mal">[]
+  <input type="radio" name="R1" id="Q1" value="bien">()
+  <input type="radio" name="R1" id="Q1" value="mal">Rien
+  <input type="radio" name="R1" id="Q1" value="mal">Aucune de ces réponses
+  <div id=zoneResultat1></div>
+  <br>
+  <br>
+
+  
+  <label for="Q2">Qu'est ce que tu met avant la variable pour la déterminer?</label>
+  <br>
+  <input type="checkbox" id="Q2" name="R2" value=-1>variable
+  <br>
+  <input type="checkbox" id="Q2" name="R2" value=1>var
+  <br>
+  <input type="checkbox" id="Q2" name="R2" value=-1>new
+  <br>
+  <input type="checkbox" id="Q2" name="R2" value=1>let
+  <br>
+  <input type="checkbox" id="Q2" name="R2" value=-1>for
+  <br>
+  <input type="checkbox" id="Q2" name="R2" value=1>Rien
+  <br>
+  <input type="checkbox" id="Q2" name="R2" value=-1>Aucune de ces réponses
+  <div id=zoneResultat2></div>
+  <br>
+  <br>
+
+  
+  <label for="Q3">Comment est-ce qu'on créé un loop utile?</label>
+  <br>
+  <select id="Q3">
+    <option value="mal">for (i=-2; i > 0; i++)</option>
+    <option value="mal">for (i=-2; i > 0; i--)</option>
+    <option value="mal">for (i=2; i > 0; i++)</option>
+    <option value="bien">for (i=2; i > 0; i--)</option>
+  </select>
+  <br>
+  <div id=zoneResultat3></div>
+  <br>
+
+  
+  <input type="button" id="btnSoumettreQuiz" onclick="soumettreQuiz()" value="Soumette le quiz">
+  <br>
+
+
+  <div id=zoneResultatFinal></div>
+
+  
+  <script>
+    function soumettreQuiz() {
+      var resultatFinal = 0
+
+      
+      var radiosR1 = document.getElementsByName("R1");
+      var R1 = "";
+      for (i=0; i < radiosR1.length; i++) {
+        if (radiosR1[i].checked) {
+          R1 = radiosR1[i].value;
+        }
+      }
+      if (R1 == "bien") {
+        resultatFinal += 1;
+      }
+      resultat1 = R1;
+      
+      
+      var checkR2 = document.getElementsByName("R2");
+      var R2 = 0;
+      for (i=0; i < checkR2.length; i++) {
+        if (checkR2[i].checked) {
+          R2 += parseInt(checkR2[i].value);
+        }
+      }
+      if (R2 == 3) {
+        resultat2 = "bien";
+        resultatFinal += 1;
+      } else {
+        resultat2 = "mal";
+      }
+
+      
+      var R3 = document.getElementById("Q3").value;
+      if (R3 == "bien") {
+        resultatFinal += 1;
+      }
+      resultat3 = R3
+
+
+      afficherResultat1 = document.getElementById("zoneResultat1");
+      afficherResultat1.innerHTML = "<br>" + resultat1;
+
+
+      afficherResultat2 = document.getElementById("zoneResultat2");
+      afficherResultat2.innerHTML = "<br>" + resultat2;
+
+
+      afficherResultat3 = document.getElementById("zoneResultat3");
+      afficherResultat3.innerHTML = "<br>" + resultat3;
+      
+      
+      resultatFinal += "/3"
+      afficherResultatFinal = document.getElementById("zoneResultatFinal");
+      afficherResultatFinal.innerHTML = "<br>" + resultatFinal;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+
+  <style>
+    #Back-button {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><a href="/" id="Back-button">&larr;</a></h1>
+
+
+  <h1>Créateur de noms</h1>
+  
+  
+  <label for="txtPrenom">Prénom:</label>
+  <input type="text" id="txtPrenom">
+  <br>
+  <label for="txtNomMilieu">Nom du milieu:</label>
+  <input type="text" id="txtNomMilieu">
+  <br>
+  <label for="txtPrenom">Nom de famille:</label>
+  <input type="text" id="txtNomFamille">
+  <br>
+  
+  
+  <input type="button" id="btnInitiales" onclick="afficheInitiales()" value="Afficher tes initiales">
+  <br>
+  <input type="button" id="btnNomComplet" onclick="afficheNomComplet()" value="Afficher ton nom complet">
+  <br>
+  <input type="button" id="btnNomUtilisateur" onclick="afficheNomUtilisateur()" value="Afficher ton nom d'utilisateur">
+  <br>
+  <div id="zoneInitiales"></div>
+  <div id="zoneNomComplet"></div>
+  <div id="zoneNomUtilisateur"></div>
+  
+  <script>
+    var initiales = "";
+    var nomComplet = "";
+    var nomUtilisateur = "";
+    var prenom = "";
+    var nomMilieu = "";
+    var nomFamille = "";
+    var afficherInitiales = "";
+    var afficherNomComplet = "";
+    var afficherNomUtilisateur = "";
+
+    
+    function chercherNoms() {
+      prenom = document.getElementById("txtPrenom").value;
+      nomMilieu = document.getElementById("txtNomMilieu").value;
+      nomFamille = document.getElementById("txtNomFamille").value;
+    }
+
+    
+    function afficheInitiales() {
+      chercherNoms();
+      initiales = prenom.charAt(0) + "." + nomMilieu.charAt(0) + "." + nomFamille.charAt(0) + ".";
+      afficherInitiales = document.getElementById("zoneInitiales");
+      afficherInitiales.innerHTML = "<br>" + initiales;
+    }
+    function afficheNomComplet() {
+      chercherNoms();
+      nomComplet = prenom + " " + nomMilieu + " " + nomFamille;
+      afficherNomComplet = document.getElementById("zoneNomComplet");
+      afficherNomComplet.innerHTML = "<br>" + nomComplet;
+    }
+    function afficheNomUtilisateur() {
+      chercherNoms();
+      nomUtilisateur = prenom.charAt(0) + nomMilieu.charAt(0) + nomFamille;
+      nomUtilisateur = nomUtilisateur.toLowerCase();
+      afficherNomUtilisateur = document.getElementById("zoneNomUtilisateur");
+      afficherNomUtilisateur.innerHTML = "<br>" + nomUtilisateur;
+    }
+  </script>
+</body>
+
+</html>
