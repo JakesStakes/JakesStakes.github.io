@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+
+  <style>
+    /* Pour enlever la ligne en dessous qui n'a pas l'air bon */
+    #Back-button {
+      text-decoration: none;
+    }
+
+    /* Rouge pour indiquer un problème */
+    #zonePasItem {
+      color: red;
+    }
+
+
+    /* Separateur entre les pages, fix temporaire, devrais être différents fichiers */
+    #separateur {
+      line-height:100000%;
+    }
+
+
+    /* https://coder-coder.com/display-divs-side-by-side/ */
+    .grid-container-croissant {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    }
+
+    .grid-container-baguette {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    }
+
+    .grid-container-saucisse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    }
+
+    .grid-container-haricot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    }
+
+    .grid-container-oeuf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Accueil -->
+  <h1><a href="/" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1 id="Accueil">Déjeuners de Jacob</h1>
+
+  <!-- https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
+  <input type="button" id="btnFinirSelection" onclick="finirSelection(); location.href='#Achat';" value="Finir"/>
+
+
+  <!-- Liens vers les pages de selection d'items -->
+  <h3>Nourriture delicieuse (Cliquer une image) :</h3>
+  <br>
+  <a href="#Croissant">
+  <img src="/images/CROISSANT.jpg" width=200 alt="Croissant"/>
+  </a>
+  <a href="#Baguette">
+  <img src="/images/Baguette.jpg" width=200 alt="Baguette"/>
+  </a>
+  <a href="#Saucisse">
+  <img src="/images/Saucisse.webp" width=200 alt="Saucisse"/>
+  </a>
+  <a href="#Haricot">
+  <img src="/images/Beans.PNG" width=200 alt="Haricot"/>
+  </a>
+  <a href="#Oeuf">
+  <img src="/images/Oeuf.jpg" width=200 alt="Oeuf"/>
+  </a>
+
+  <!-- Description de l'entreprise -->
+  <p>Petite entreprise qui vend la nourriture soigneusement choisi par Jacob pour ce restaurant de qualité la plus haute. La livraison est mise en place pour donner au gens cette merveilleuse nourriture avec plus grande vitesse et efficacité, avant qu’ils ne développent une dépendance à d’autre aliments horribles et dégoûtants.
+</p>
+
+<!-- Separateur entre les pages, fix temporaire, devrais être différents fichiers -->
+<div id="separateur"><pre> </pre></div>
+
+
+  
+  
+  <!-- Croissant -->
+  <h1><a href="#Accueil" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1 id="Croissant">Déjeuners de Jacob</h1>
+  
+  <!-- Détails -->
+  <br>
+  <div>
+  <h2>Croissant</h2>
+  <h3>499.99$</h3>
+  <img src="/images/CROISSANT.jpg" width=300 alt="Croissant">
+
+  <!-- Options de l'utilisateur -->
+  <br>
+  <h4>Quantité :</h4>
+  <input type="text" id="quantiteCroissant">
+
+  <input type="button" id="btnAjouterCroissant" onclick="ajouterCroissant()" value="Ajouter">
+  
+    
+    <!-- https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
+  <input type="button" id="btnFinirSelection" onclick="finirSelection(); location.href='#Achat';" value="Finir"/>
+  </div>
+
+<!-- Separateur entre les pages, fix temporaire, devrais être différents fichiers -->
+<div id="separateur"><pre> </pre></div>
+  
+
+  
+  
+  <!-- Baguette -->
+  <h1><a href="#Accueil" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1 id="Baguette">Déjeuners de Jacob</h1>
+
+  <!-- Détails -->
+  <br>
+  <div>
+  <h2>Baguette</h2>
+  <h3>399.99$</h3>
+  <img src="/images/Baguette.jpg" width=300 alt="Baguette">
+
+  <!-- Options de l'utilisateur -->
+  <br>
+  <h4>Quantité :</h4>
+  <input type="text" id="quantiteBaguette">
+
+  <input type="button" id="btnAjouterBaguette" onclick="ajouterBaguette()" value="Ajouter">
+  
+    
+    <!-- https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
+  <input type="button" id="btnFinirSelection" onclick="finirSelection(); location.href='#Achat';" value="Finir"/>
+  </div>
+
+  <!-- Separateur entre les pages, fix temporaire, devrais être différents fichiers -->
+<div id="separateur"><pre> </pre></div>
+  
+
+  
+
+  <!-- Saucisse -->
+  <h1><a href="#Accueil" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1 id="Saucisse">Déjeuners de Jacob</h1>
+
+  <!-- Détails -->
+  <br>
+  <div>
+  <h2>Saucisse</h2>
+  <h3>449.99$</h3>
+  <img src="/images/Saucisse.webp" width=300 alt="Saucisse">
+
+  <!-- Options de l'utilisateur -->
+  <br>
+  <h4>Quantité :</h4>
+  <input type="text" id="quantiteSaucisse">
+
+  <input type="button" id="btnAjouterSaucisse" onclick="ajouterSaucisse()" value="Ajouter">
+
+
+  <!-- https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
+  <input type="button" id="btnFinirSelection" onclick="finirSelection(); location.href='#Achat';" value="Finir"/>
+  </div>
+
+  <!-- Separateur entre les pages, fix temporaire, devrais être différents fichiers -->
+<div id="separateur"><pre> </pre></div>
+
+
+
+  
+  <!-- Haricot -->
+  <h1><a href="#Accueil" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1 id="Haricot">Déjeuners de Jacob</h1>
+
+  <!-- Détails -->
+  <br>
+  <div>
+  <h2>Haricot</h2>
+  <h3>199.99$</h3>
+  <img src="/images/Beans.PNG" width=300 alt="Haricot">
+
+  <!-- Options de l'utilisateur -->
+  <br>
+  <h4>Quantité :</h4>
+  <input type="text" id="quantiteHaricot">
+
+  <input type="button" id="btnAjouterHaricot" onclick="ajouterHaricot()" value="Ajouter">
+
+
+  <!-- https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
+  <input type="button" id="btnFinirSelection" onclick="finirSelection(); location.href='#Achat';" value="Finir"/>
+  </div>
+
+  <!-- Separateur entre les pages, fix temporaire, devrais être différents fichiers -->
+<div id="separateur"><pre> </pre></div>
+
+
+
+  
+  <!-- Oeuf -->
+  <h1><a href="#Accueil" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1 id="Oeuf">Déjeuners de Jacob</h1>
+
+  <!-- Détails -->
+  <br>
+  <div>
+  <h2>Oeuf</h2>
+  <h3>299.99$</h3>
+  <img src="/images/Oeuf.jpg" width=300 alt="Oeuf">
+
+  <!-- Options de l'utilisateur -->
+  <br>
+  <h4>Quantité :</h4>
+  <input type="text" id="quantiteOeuf">
+
+  <input type="button" id="btnAjouterOeuf" onclick="ajouterOeuf()" value="Ajouter">
+
+
+  <!-- https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
+  <input type="button" id="btnFinirSelection" onclick="finirSelection(); location.href='#Achat';" value="Finir"/>
+  </div>
+
+  <!-- Separateur entre les pages, fix temporaire, devrais être différents fichiers -->
+<div id="separateur"><pre> </pre></div>
+
+  
+  <!-- Achat -->
+  <h1><a href="#Accueil" id="Back-button">&larr;</a></h1>
+  
+  
+  <h1 id="Achat">Déjeuners de Jacob</h1>
+
+  <div id="zonePasItem"></div>
+
+  <!-- Chariot -->
+  <br>
+  <br>
+  <div class="grid-container-croissant">
+    <!-- Section image -->
+    <div class="grid-child-imageCroissant">
+      <img src="/images/CROISSANT.jpg" width=200 alt="Croissant">
+    </div>
+
+    <!-- Section Texte -->
+    <div class="grid-child-quantiteCroissant">
+      <h2>Croissant : 499.99$</h2>
+      Quantité : 
+      <div id="zoneQuantiteCroissant"></div>
+    </div>
+  </div>
+
+
+  <div class="grid-container-baguette">
+    <!-- Section image -->
+    <div class="grid-child-imageBaguette">
+      <img src="/images/Baguette.jpg" width=200 alt="Baguette"> 
+    </div>
+
+    <!-- Section Texte -->
+    <div class="grid-child-quantiteBaguette">
+      <h2>Baguette : 399.99$</h2>
+      Quantité : 
+      <div id="zoneQuantiteBaguette"></div>
+    </div>
+  </div>
+
+
+  <div class="grid-container-saucisse">
+    <!-- Section image -->
+    <div class="grid-child-imageSaucisse">
+      <img src="/images/Saucisse.webp" width=200 alt="Saucisse">
+    </div>
+
+    <!-- Section Texte -->
+    <div class="grid-child-quantiteSaucisse">
+      <h2>Saucisse : 449.99$</h2>
+      Quantité :
+      <div id="zoneQuantiteSaucisse"></div>
+    </div>
+  </div>
+
+
+  <div class="grid-container-haricot">
+    <!-- Section image -->
+    <div class="grid-child-imageHaricot">
+      <img src="/images/Beans.PNG" width=200 alt="Haricot">
+    </div>
+
+    <!-- Section Texte -->
+    <div class="grid-child-quantiteHaricot">
+      <h2>Haricot : 199.99$</h2>
+      Quantité :
+      <div id="zoneQuantiteHaricot"></div>
+    </div>
+  </div>
+
+
+  <div class="grid-container-oeuf">
+    <!-- Section image -->
+    <div class="grid-child-imageOeuf">
+      <img src="/images/Oeuf.jpg" width=200 alt="Oeuf">
+    </div>
+
+    <!-- Section Texte -->
+    <div class="grid-child-quantiteOeuf">
+      <h2>Oeuf : 299.99$</h2>
+      Quantité :
+      <div id="zoneQuantiteOeuf"></div>
+    </div>
+  </div>
+
+  <!-- Options de l'utilisateur -->
+  
+  <h4>Province :</h4>
+  <select id="province">
+    <option value=1.13>Ontario</option>
+    <option value=1.15>Québec</option>
+  </select>
+
+
+  <h4>Livraison :</h4>
+  <select id="livraison">
+    <option value=15>15$ Plus que 5 jours</option>
+    <option value=40>40$ Prochain 5 jours</option>
+  </select>
+
+  <!-- Bouton pour acheter les items, donc montrer le reçu et les options pour payer -->
+  <input type="button" id="btnAcheter" onclick="acheter()" value="Acheter"/>
+
+
+  <div id="zoneRecu"></div>
+
+  
+  <!-- Va faire apparaitre boite de texte et bouton pour payer -->
+  <div id="zoneOptionPayer"></div>
+
+  <!-- Va faire apparaitre l'argent rendu, ou une erreur s'il n'y à pas assez d'argent -->
+  <div id="zoneResultatPayer"></div>
+  
+  
+  <script src="/Javascript/Restaurant.js"></script>
+</body>
+
+</html>
